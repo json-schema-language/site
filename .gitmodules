@@ -1,0 +1,4 @@
+[submodule "public"]
+	path = public
+	url = git@github.com:json-schema-language/json-schema-language.github.io.git
+	branch = master
