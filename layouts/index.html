@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <nav>
+    <div class="nav-wrapper blue Navbar">
+      <div class="container">
+        <a href="#!" class="brand-logo Navbar__LogoText">
+          <i class="material-icons">check</i>
+          JSON Schema Language
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="/implementations">Implementations</a></li>
+          <li><a href="https://github.com/json-schema-language">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="Home__Splash">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <h1>
+            Be more productive with JSON
+          </h1>
+
+          <p class="Home__Splash__Subtitle">
+            Describe the shape of your data once. Automatically generate
+            validators and types for any language.
+          </p>
+
+          <a href="/implementations">
+            <div class="btn-large waves-effect waves-light blue accent-4 Home__CTA">
+              Get Started
+
+              <i class="material-icons right">arrow_forward</i>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m6">
+          <div class="card blue lighten-5">
+            <div class="card-stacked">
+              <div class="card-content">
+                <code>
+<pre>
+properties:
+  name:
+    type: string
+  isAdmin:
+    type: boolean
+  favoriteNumbers:
+    elements:
+      type: number
+</pre>
+                  </div>
+                  <div class="card-action">
+                    <code>user.schema.yaml</code>
+              </div>
+              </code>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card green lighten-4">
+                <div class="card-image">
+                  <div class="card-content">
+                    <code>
+<pre>
+{
+  "name": "John Doe",
+  "isAdmin": true,
+  "favoriteNumbers": [42]
+}
+</pre>
+                      </code>
+                  </div>
+                  <a class="btn-floating halfway-fab waves-effect waves-light green">
+                    <i class="material-icons">
+                      check
+                    </i>
+                  </a>
+                </div>
+                <div class="card-content">
+                  <p>
+                    No errors.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card red lighten-4">
+                <div class="card-image">
+                  <div class="card-content">
+                    <code>
+<pre>
+{
+  "isAdmin": "yes",
+  "favoriteNumbers":
+    [0, "42", 1337]
+}
+</pre>
+                    </code>
+                  </div>
+                  <a class="btn-floating halfway-fab waves-effect waves-light red"><i
+                      class="material-icons">close</i></a>
+                </div>
+                <div class="card-content">
+                  <p>
+                    Three errors:
+
+                    <ol>
+                      <li>
+                        <code>name</code> is required
+                      </li>
+                      <li>
+                        <code>isAdmin</code> must be a boolean
+                      </li>
+                      <li>
+                        <code>favoriteNumbers[1]</code> must be a number
+                      </li>
+                    </ol>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="Home__Why grey lighten-4">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m8 offset-m2">
+          <h4 class="center-align">
+            <b>
+
+              Standardize your JSON data. Enforce your standard anywhere.
+            </b>
+          </h4>
+
+          <p class="center-align Home__Why__Subtitle">
+            Stop writing ad-hoc, repetitive code to check the correctness of
+            payloads. JSON Schema Language lets you describe the shape and type of
+            your data, and generates validators and types for you.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="center-align Home__Why__Reason">
+            <div>
+              <i class="large material-icons">mood</i>
+            </div>
+
+            Simple
+          </div>
+
+          <p>
+            JSON is great because it's obvious. JSON Schema Language is the
+            same; most engineers understand it without having to read any docs.
+          </p>
+
+          <a href="/docs">
+            <div class="btn waves-effect waves-light blue">
+              Learn JSL in 5 Minutes
+
+              <i class="material-icons right">arrow_forward</i>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m4">
+          <div class="center-align Home__Why__Reason">
+            <div>
+              <i class="large material-icons">devices</i>
+            </div>
+
+            Interoperable
+          </div>
+
+          <p>
+            JSON Schema Language is a language-independent way of describing
+            JSON data. Use same schema on web and mobile, or across servers
+            written in different languages.
+          </p>
+
+          <a href="/implementations">
+            <div class="btn waves-effect waves-light blue">
+              Browse implementations
+
+              <i class="material-icons right">arrow_forward</i>
+            </div>
+          </a>
+        </div>
+        <div class="col s12 m4">
+          <div class="center-align Home__Why__Reason">
+            <div>
+              <i class="large material-icons">build</i>
+            </div>
+
+            Extensible
+          </div>
+
+          <p>
+            Whether it's custom tooling for your company or adding your own
+            validators, JSON Schema Language is easy to build upon or tailor to
+            your needs.
+          </p>
+
+          <a href="/implementor-guide">
+            <div class="btn waves-effect waves-light blue">
+              Implementor Quick-Start
+
+              <i class="material-icons right">arrow_forward</i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="Home__Catalog">
+    <div class="container">
+      <h4 class="center-align">
+        <b>
+          Choose from dozens of implementations
+        </b>
+      </h4>
+    </div>
+  </div>
+
+  <div class="Home__BeforeAfter blue lighten-5">
+    <div class="container">
+
+      <h4 class="center-align">
+        <b>
+          Stop writing JSON boilerplate
+        </b>
+      </h4>
+
+      <p class="Home__BeforeAfter__Subtitle center-align">
+        JSON Schema Language was made by developers tired of repetitive
+        type-checks and crashes due to malformed JSON.
+      </p>
+
+      <div class="row">
+        <div class="col s12 m3">
+          <h5 class="right-align">Before</h5>
+
+          <p class="right-align">
+            Lots of manual checking. Easy to get wrong, and not portable.
+          </p>
+        </div>
+
+        <div class="col s12 m9">
+          <div class="Home__BeforeAfter__Code">
+            <div class="highlight">
+              <pre><span></span><span class="c">// There&#39;s a couple of problems with this code.</span>
+<span class="c">//</span>
+<span class="c">// 1. Only one error returned at a time.</span>
+<span class="c">// 2. Errors are sometimes misleading; the same message is given if an email is</span>
+<span class="c">//    missing versus being of the wrong type.</span>
+<span class="c">// 3. This code is not portable. If I want some other service, in a different</span>
+<span class="c">//    language, to do this very same validation, I&#39;ll have to write and maintain</span>
+<span class="c">//    this logic twice.</span>
+app<span class="p">.</span>post<span class="ss">(</span>&quot;/users&quot;<span class="p">,</span> <span class="ss">(</span>req<span class="p">,</span> res<span class="ss">)</span> <span class="o">=&gt;</span> <span class="ss">{</span>
+  const data <span class="o">=</span> req<span class="p">.</span>body
+
+  <span class="nf">if</span> <span class="ss">(</span>typeof data !<span class="o">==</span> &quot;object&quot;<span class="ss">)</span> <span class="ss">{</span>
+    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;body must be an object&quot; <span class="ss">})</span>
+  <span class="ss">}</span>
+
+  <span class="nf">if</span> <span class="ss">(</span>typeof data<span class="p">.</span>email !<span class="o">==</span> &quot;string&quot;<span class="ss">)</span> <span class="ss">{</span>
+    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;email must be a string&quot; <span class="ss">})</span>
+    return
+  <span class="ss">}</span>
+
+  <span class="nf">if</span> <span class="ss">(</span>typeof data<span class="p">.</span>isAdmin !<span class="o">==</span> &quot;boolean&quot;<span class="ss">)</span> <span class="ss">{</span>
+    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;isAdmin must be a boolean&quot; <span class="ss">})</span>
+    return
+  <span class="ss">}</span>
+
+  <span class="nf">if</span> <span class="ss">(</span>!Array<span class="p">.</span>isArray<span class="ss">(</span>data<span class="p">.</span>favoriteNumbers<span class="ss">))</span> <span class="ss">{</span>
+    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;favoriteNumbers must be a boolean&quot; <span class="ss">})</span>
+    return
+  <span class="ss">}</span>
+
+  for <span class="ss">(</span>const number of data<span class="p">.</span>favoriteNumbers<span class="ss">)</span> <span class="ss">{</span>
+    <span class="nf">if</span> <span class="ss">(</span>typeof number !<span class="o">==</span> &quot;number&quot;<span class="ss">)</span> <span class="ss">{</span>
+      res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;elements of favoriteNumbers must be numbers&quot; <span class="ss">})</span>
+      return
+    <span class="ss">}</span>
+  <span class="ss">}</span>
+
+  <span class="c">// Ok, the data is valid. Let&#39;s proceed.</span>
+  <span class="c">//</span>
+  <span class="c">// ...</span>
+<span class="ss">})</span>;
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m3">
+          <h5 class="right-align">After</h5>
+
+          <p class="right-align">
+            All checking is automated. Logic is portable between languages.
+          </p>
+
+          <p class="right-align">
+            This example uses the <a
+              href="https://github.com/json-schema-language/json-schema-language-typescript">TypeScript</a>
+            implementation and the <a
+              href="https://github.com/json-schema-language/jsl-codegen"><code>jsl-codegen</code></a>
+            code generation command-line tool.
+          </p>
+        </div>
+        <div class="col s12 m9">
+          <div class="Home__BeforeAfter__Code">
+            <div class="highlight">
+              <pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Validator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@json-schema-language/json-schema-language&quot;</span><span class="p">;</span>
+
+<span class="c1">// If you&#39;re using TypeScript, a tool called jsl-codegen can generate types from</span>
+<span class="c1">// a schema.</span>
+<span class="kr">import</span> <span class="nx">User</span> <span class="nx">from</span> <span class="s2">&quot;./user&quot;</span>
+
+<span class="kr">const</span> <span class="nx">validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Validator</span><span class="p">({</span>
+  <span class="nx">properties</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">email</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="p">},</span>
+    <span class="nx">isAdmin</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;boolean&quot;</span> <span class="p">},</span>
+    <span class="nx">favoriteNumbers</span><span class="o">:</span> <span class="p">{</span>
+      <span class="nx">elements</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;number&quot;</span> <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">try</span> <span class="p">{</span>
+    <span class="c1">// Check if the data is valid. Throws if not.</span>
+    <span class="nx">validator</span><span class="p">.</span><span class="nx">validate</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
+
+    <span class="c1">// Ok, the data is valid! Let&#39;s proceed.</span>
+    <span class="c1">//</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// err.errors will be an array of errors. The format of these errors is</span>
+    <span class="c1">// standardized, and is the same in every implementation of JSON Schema</span>
+    <span class="c1">// Language.</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span> <span class="nx">error</span>: <span class="kt">err.errors</span> <span class="p">})</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="page-footer blue">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">JSON Schema Language</h5>
+          <p class="grey-text text-lighten-4">
+            JSON Schema Language is an open-source project. Please feel free to
+            ask questions or contribute by checking out any of the links to the
+            right.
+          </p>
+
+          <p class="grey-text text-lighten-4">
+            Whenever interacting with JSON Schema Language's community, please
+            adhere to our <a class="grey-text text-lighten-4" style="text-decoration: underline;"
+              href="https://www.contributor-covenant.org/version/1/4/code-of-conduct">Code
+              of Conduct</a>.
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/json-schema-language">GitHub</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/docs">Documentation</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://discord.com">Discord</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://ietf.org">IETF RFC</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2019 JSON Schema Language contributors
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
