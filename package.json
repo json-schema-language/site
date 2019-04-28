@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@json-schema-language/json-schema-language": "^0.1.5",
+    "classnames": "^2.2.6",
+    "preact": "^8.4.2",
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-typescript": "^1.0.1",
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5"
+  }
+}

@@ -137,7 +137,6 @@ properties:
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="Home__Why grey lighten-4">
@@ -242,134 +241,20 @@ properties:
     </div>
   </div>
 
-  <div class="Home__BeforeAfter blue lighten-5">
+  <div class="Home__TryLive blue lighten-5">
     <div class="container">
-
       <h4 class="center-align">
         <b>
-          Stop writing JSON boilerplate
+          Try it live
         </b>
       </h4>
 
-      <p class="Home__BeforeAfter__Subtitle center-align">
-        JSON Schema Language was made by developers tired of repetitive
-        type-checks and crashes due to malformed JSON.
+      <p class="Home__TryLive__Subtitle center-align">
+        Write a schema and instance (input) on the left, or choose from one of
+        the presets. Errors will appear on the right.
       </p>
 
-      <div class="row">
-        <div class="col s12 m3">
-          <h5 class="right-align">Before</h5>
-
-          <p class="right-align">
-            Lots of manual checking. Easy to get wrong, and not portable.
-          </p>
-        </div>
-
-        <div class="col s12 m9">
-          <div class="Home__BeforeAfter__Code">
-            <div class="highlight">
-              <pre><span></span><span class="c">// There&#39;s a couple of problems with this code.</span>
-<span class="c">//</span>
-<span class="c">// 1. Only one error returned at a time.</span>
-<span class="c">// 2. Errors are sometimes misleading; the same message is given if an email is</span>
-<span class="c">//    missing versus being of the wrong type.</span>
-<span class="c">// 3. This code is not portable. If I want some other service, in a different</span>
-<span class="c">//    language, to do this very same validation, I&#39;ll have to write and maintain</span>
-<span class="c">//    this logic twice.</span>
-app<span class="p">.</span>post<span class="ss">(</span>&quot;/users&quot;<span class="p">,</span> <span class="ss">(</span>req<span class="p">,</span> res<span class="ss">)</span> <span class="o">=&gt;</span> <span class="ss">{</span>
-  const data <span class="o">=</span> req<span class="p">.</span>body
-
-  <span class="nf">if</span> <span class="ss">(</span>typeof data !<span class="o">==</span> &quot;object&quot;<span class="ss">)</span> <span class="ss">{</span>
-    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;body must be an object&quot; <span class="ss">})</span>
-  <span class="ss">}</span>
-
-  <span class="nf">if</span> <span class="ss">(</span>typeof data<span class="p">.</span>email !<span class="o">==</span> &quot;string&quot;<span class="ss">)</span> <span class="ss">{</span>
-    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;email must be a string&quot; <span class="ss">})</span>
-    return
-  <span class="ss">}</span>
-
-  <span class="nf">if</span> <span class="ss">(</span>typeof data<span class="p">.</span>isAdmin !<span class="o">==</span> &quot;boolean&quot;<span class="ss">)</span> <span class="ss">{</span>
-    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;isAdmin must be a boolean&quot; <span class="ss">})</span>
-    return
-  <span class="ss">}</span>
-
-  <span class="nf">if</span> <span class="ss">(</span>!Array<span class="p">.</span>isArray<span class="ss">(</span>data<span class="p">.</span>favoriteNumbers<span class="ss">))</span> <span class="ss">{</span>
-    res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;favoriteNumbers must be a boolean&quot; <span class="ss">})</span>
-    return
-  <span class="ss">}</span>
-
-  for <span class="ss">(</span>const number of data<span class="p">.</span>favoriteNumbers<span class="ss">)</span> <span class="ss">{</span>
-    <span class="nf">if</span> <span class="ss">(</span>typeof number !<span class="o">==</span> &quot;number&quot;<span class="ss">)</span> <span class="ss">{</span>
-      res<span class="p">.</span>status<span class="ss">(</span><span class="mi">400</span><span class="ss">)</span><span class="p">.</span>send<span class="ss">({</span> error<span class="o">:</span> &quot;elements of favoriteNumbers must be numbers&quot; <span class="ss">})</span>
-      return
-    <span class="ss">}</span>
-  <span class="ss">}</span>
-
-  <span class="c">// Ok, the data is valid. Let&#39;s proceed.</span>
-  <span class="c">//</span>
-  <span class="c">// ...</span>
-<span class="ss">})</span>;
-</pre>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col s12 m3">
-          <h5 class="right-align">After</h5>
-
-          <p class="right-align">
-            All checking is automated. Logic is portable between languages.
-          </p>
-
-          <p class="right-align">
-            This example uses the <a
-              href="https://github.com/json-schema-language/json-schema-language-typescript">TypeScript</a>
-            implementation and the <a
-              href="https://github.com/json-schema-language/jsl-codegen"><code>jsl-codegen</code></a>
-            code generation command-line tool.
-          </p>
-        </div>
-        <div class="col s12 m9">
-          <div class="Home__BeforeAfter__Code">
-            <div class="highlight">
-              <pre><span></span><span class="kr">import</span> <span class="p">{</span> <span class="nx">Validator</span> <span class="p">}</span> <span class="nx">from</span> <span class="s2">&quot;@json-schema-language/json-schema-language&quot;</span><span class="p">;</span>
-
-<span class="c1">// If you&#39;re using TypeScript, a tool called jsl-codegen can generate types from</span>
-<span class="c1">// a schema.</span>
-<span class="kr">import</span> <span class="nx">User</span> <span class="nx">from</span> <span class="s2">&quot;./user&quot;</span>
-
-<span class="kr">const</span> <span class="nx">validator</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Validator</span><span class="p">({</span>
-  <span class="nx">properties</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">email</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span> <span class="p">},</span>
-    <span class="nx">isAdmin</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;boolean&quot;</span> <span class="p">},</span>
-    <span class="nx">favoriteNumbers</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">elements</span><span class="o">:</span> <span class="p">{</span> <span class="nx">type</span><span class="o">:</span> <span class="s2">&quot;number&quot;</span> <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">})</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s2">&quot;/users&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
-  <span class="k">try</span> <span class="p">{</span>
-    <span class="c1">// Check if the data is valid. Throws if not.</span>
-    <span class="nx">validator</span><span class="p">.</span><span class="nx">validate</span><span class="p">(</span><span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">)</span>
-
-    <span class="c1">// Ok, the data is valid! Let&#39;s proceed.</span>
-    <span class="c1">//</span>
-    <span class="c1">// ...</span>
-  <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
-    <span class="c1">// err.errors will be an array of errors. The format of these errors is</span>
-    <span class="c1">// standardized, and is the same in every implementation of JSON Schema</span>
-    <span class="c1">// Language.</span>
-    <span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="p">(</span><span class="mi">400</span><span class="p">).</span><span class="nx">send</span><span class="p">({</span> <span class="nx">error</span>: <span class="kt">err.errors</span> <span class="p">})</span>
-  <span class="p">}</span>
-<span class="p">})</span>
-</pre>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div id="Home__TryLive__ReactRoot"></div>
     </div>
   </div>
 
@@ -410,6 +295,7 @@ app<span class="p">.</span>post<span class="ss">(</span>&quot;/users&quot;<span 
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/index.js"></script>
 </body>
 
 </html>
