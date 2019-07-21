@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "fmt": "prettier --write layouts/**"
+  },
+  "prettier": {}
+}
