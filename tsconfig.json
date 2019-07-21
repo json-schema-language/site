@@ -1,8 +1,0 @@
-{
-  "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "lib",
-    "jsx": "react",
-    "jsxFactory": "h"
-  }
-}
