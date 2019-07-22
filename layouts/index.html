@@ -1,17 +1,284 @@
 <!DOCTYPE html>
+
 <head>
   <title>JSON Schema Language</title>
 
-  <link
-    href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
-    rel="stylesheet"
-  />
   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/icon?family=Material+Icons"
   />
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Roboto+Mono:300,400,500"
+    rel="stylesheet"
+  />
+
+  {{ $style := resources.Get "scss/index.scss" | resources.ToCSS (dict "includePaths" (slice "node_modules")) | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
 </head>
-<body>
-  <h1>Hello, world!</h1>
+
+<body class="mdc-typography">
+  <header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section
+        class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+      >
+        <button
+          class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+        >
+          check
+        </button>
+        <span class="mdc-top-app-bar__title">
+          JSON Schema Language
+        </span>
+      </section>
+    </div>
+  </header>
+
+  <div class="mdc-top-app-bar--fixed-adjust"></div>
+
+  <section class="jsl-index-section jsl-index-section1">
+    <div class="jsl-index-section__inner">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-8-desktop"
+          >
+            <h1 class="mdc-typography--headline3 jsl-index-section1-header">
+              Be more productive with JSON
+            </h1>
+            <p class="mdc-typography--body1 jsl-index-section1-subtitle">
+              Describe the shape of your data once. Automatically generate
+              validators and types for any language.
+            </p>
+
+            <a
+              class="mdc-button mdc-button--raised jsl-index-section1-cta-button"
+              href="/getting-started"
+            >
+              <span class="mdc-button__label">Get started</span>
+              <i class="material-icons mdc-button__icon" aria-hidden="true">
+                arrow_forward
+              </i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jsl-index-section">
+    <div class="jsl-index-section__inner">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <h2 class="mdc-typography--headline3">
+              Solve your JSON headaches
+            </h2>
+          </div>
+        </div>
+
+        <div class="mdc-layout-grid__inner">
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop"
+          >
+            <h3 class="mdc-typography--headline5">
+              Cross-platform consistency
+            </h3>
+
+            <p class="mdc-typography--body1">
+              Run input validation anywhere and get the exact same validation
+              errors. JSON Schema Language is a platform-independent way
+              describe the shape of your data, and every implementation produces
+              the exact same validation errors.
+            </p>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop"
+          >
+            <h3 class="mdc-typography--headline5">
+              Type system integration
+            </h3>
+
+            <p class="mdc-typography--body1">
+              What good is a schema that your type system can't use? Generate
+              TypeScript interfaces, Golang structs, Java classes, and much more
+              from your schemas using the <code>jsl-codegen</code> tool.
+            </p>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop"
+          >
+            <h3 class="mdc-typography--headline5">
+              Docs and UI generation
+            </h3>
+
+            <p class="mdc-typography--body1">
+              The <code>jsl-codegen</code> tool can generate markdown
+              documentation of your schema, and <code>jsl-react</code> can
+              generate <a href="https://reactjs.org/">React</a> UIs from JSL
+              schemas. Plus, JSON Schema Language is dead simple, so it's easy
+              to build your own tooling too.
+            </p>
+          </div>
+        </div>
+
+        <div class="mdc-layout-grid__inner">
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop"
+          >
+            <a class="mdc-button mdc-button--outlined" href="/implementations">
+              <span class="mdc-button__label">View implementations</span>
+            </a>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop"
+          >
+            <a
+              class="mdc-button mdc-button--outlined"
+              href="/tools/jsl-codegen"
+            >
+              <span class="mdc-button__label"
+                >More on <code>jsl-codegen</code></span
+              >
+            </a>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop"
+          >
+            <a
+              class="mdc-button mdc-button--outlined"
+              href="https://github.com/json-schema-language-json-schema-language-react"
+            >
+              <span class="mdc-button__label"
+                >More on <code>jsl-react</code></span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jsl-index-section">
+    <div class="jsl-index-section__inner">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <h2 class="mdc-typography--headline3">
+              Simple by design
+            </h2>
+          </div>
+        </div>
+
+        <div class="mdc-layout-grid__inner">
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop"
+          >
+            <h3 class="mdc-typography--headline4">
+              Learn all of JSL in 60 seconds
+            </h3>
+
+            <p class="mdc-typography--body1">
+              Seriously. If you've used JSON before, and you've used a type
+              system before, you can probably learn all of JSON Schema Language
+              in one minute.
+            </p>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop"
+          >
+            <h3 class="mdc-typography--headline4">
+              JSL-ify your existing data in minutes
+            </h3>
+
+            <p class="mdc-typography--body1">
+              Just put some example data into a file or stream, run the
+              <code>jsl-infer</code> tool on it, and a working schema will pop
+              out. It all runs on your machine, so your data is secure.
+            </p>
+          </div>
+        </div>
+
+        <div class="mdc-layout-grid__inner">
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop"
+          >
+            <a class="mdc-button mdc-button--outlined" href="/tutorial">
+              <span class="mdc-button__label">Learn JSL in 60 seconds</span>
+            </a>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop"
+          >
+            <a class="mdc-button mdc-button--outlined" href="/tools/jsl-infer">
+              <span class="mdc-button__label"
+                >More on <code>jsl-infer</code></span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="jsl-footer">
+    <div class="jsl-footer__inner">
+      <div class="mdc-layout-grid">
+        <div class="mdc-layout-grid__inner">
+          <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <p class="mdc-typography--headline6">JSON Schema Language</p>
+          </div>
+        </div>
+        <div class="mdc-layout-grid__inner">
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop"
+          >
+            <p class="mdc-typography--body2">
+              JSON Schema Language is an open-source project. Please feel free
+              to ask questions or contribute by checking out any of the links to
+              the right.
+            </p>
+
+            <p class="mdc-typography--body2">
+              Whenever interacting with the JSON Schema Language community,
+              please adhere to our
+
+              <a
+                href="https://www.contributor-covenant.org/version/1/4/code-of-conduct"
+              >
+                Code of Conduct</a
+              >.
+            </p>
+
+            <p class="mdc-typography--body2">
+              © 2019 JSON Schema Language contributors
+            </p>
+          </div>
+
+          <div
+            class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6-desktop"
+          >
+            <p class="mdc-typography--body2">
+              <a href="https://github.com/json-schema-language">GitHub</a>
+            </p>
+
+            <p class="mdc-typography--body2">
+              <a
+                href="https://tools.ietf.org/html/draft-json-schema-language-01"
+              >
+                IETF Internet-Draft
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>

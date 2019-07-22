@@ -1,0 +1,70 @@
+$mdc-theme-primary: #1976d2;
+$mdc-theme-secondary: #fff8e1;
+$mdc-theme-on-primary: #ffffff;
+$mdc-theme-on-secondary: #000000;
+
+@import "@material/top-app-bar/mdc-top-app-bar";
+@import "@material/icon-button/mdc-icon-button";
+@import "@material/typography/mdc-typography";
+@import "@material/button/mdc-button";
+@import "@material/layout-grid/mdc-layout-grid";
+
+body {
+  margin: 0;
+}
+
+code {
+  font-family: "Roboto Mono", monospace;
+}
+
+.jsl-index-section__inner {
+  @media screen and (min-width: #{map-get($mdc-layout-grid-breakpoints, "desktop")}) {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.jsl-index-section1 {
+  display: flex;
+  align-items: center;
+  background-color: $mdc-theme-secondary;
+
+  @media screen and (min-width: #{map-get($mdc-layout-grid-breakpoints, "desktop")}) {
+    height: 800px;
+  }
+}
+
+.jsl-index-section1-header {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.jsl-index-section1-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin-top: 20px;
+}
+
+.jsl-index-section1-cta-button {
+  margin-top: 20px;
+  padding: 28px;
+}
+
+.jsl-footer {
+  background-color: darken($mdc-theme-primary, 15%);
+  color: $mdc-theme-on-primary;
+
+  a {
+    color: $mdc-theme-on-primary;
+  }
+}
+
+.jsl-footer__inner {
+  @media screen and (min-width: #{map-get($mdc-layout-grid-breakpoints, "desktop")}) {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
