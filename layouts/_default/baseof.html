@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+  <title>JSON Schema Language</title>
+
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500|Roboto+Mono:300,400,500"
+    rel="stylesheet"
+  />
+
+  {{ $style := resources.Get "scss/index.scss" | resources.ToCSS (dict "includePaths" (slice "node_modules")) | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
+</head>
+<body class="mdc-typography">
+  <header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section
+        class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"
+      >
+        <button
+          class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button"
+        >
+          check
+        </button>
+        <span class="mdc-top-app-bar__title">
+          JSON Schema Language
+        </span>
+      </section>
+    </div>
+  </header>
+
+  <div class="mdc-top-app-bar--fixed-adjust"></div>
+
+  {{ block "main" . }}
+  {{ end }}
+</body>
