@@ -17,6 +17,13 @@ code {
   font-family: "Roboto Mono", monospace;
 }
 
+.jsl-mainmatter {
+  p,
+  li {
+    @include mdc-typography("body1");
+  }
+}
+
 .jsl-index-section__inner {
   @media screen and (min-width: #{map-get($mdc-layout-grid-breakpoints, "desktop")}) {
     max-width: 1200px;
